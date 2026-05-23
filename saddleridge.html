@@ -12,7 +12,7 @@
   html { scroll-behavior: smooth; }
   body { background: var(--cream); color: var(--dark); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
   .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2.5rem 1.5rem 3rem; overflow: hidden; }
-  .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,26,23,0.15) 0%, rgba(28,26,23,0.72) 100%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80') center/cover no-repeat; z-index: 0; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,26,23,0.15) 0%, rgba(28,26,23,0.72) 100%), url('https://i.imgur.com/LSzalzB.jpeg') center/cover no-repeat; z-index: 0; }
   .hero-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--accent); color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; z-index: 2; }
   .hero-content { position: relative; z-index: 1; }
   .hero-eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.75rem; }
@@ -25,7 +25,7 @@
   .hero-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); align-self: center; }
   .scroll-cue { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; background: none; border: none; }
   .scroll-cue svg { width: 16px; height: 16px; }
-  .notice-band { background: var(--dark); color: rgba(255,255,255,0.9); text-align: center; padding: 1.1rem 1.5rem; font-size: 13px; font-weight: 300; letter-spacing: 0.04em; }
+  .notice-band { background: var(--dark); color: rgba(255,255,255,0.9); text-align: center; padding: 2rem 1.5rem; font-size: 20px; font-weight: 300; letter-spacing: 0.04em; }
   .notice-band strong { color: var(--accent); font-weight: 500; }
   .features { padding: 4rem 1.5rem; max-width: 640px; margin: 0 auto; }
   .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -73,9 +73,13 @@
 </head>
 <body>
 
+<div class="notice-band">
+  <strong>No open houses currently scheduled</strong><br><br><a href="#contact" style="display:inline-block; margin-top:0.5rem; background:var(--accent); color:#fff; font-size:14px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:14px 28px; border-radius:3px; text-decoration:none;">Request a Private Tour or More Info</a>
+</div>
+
 <section class="hero">
   <div class="hero-bg"></div>
-  <span class="hero-badge">$679,000</span>
+
   <div class="hero-content">
     <p class="hero-eyebrow">Exclusively presented at</p>
     <h1 class="hero-address">299 Saddleridge<br>Trail</h1>
@@ -83,9 +87,9 @@
     <div class="hero-stats">
       <div class="hero-stat"><span class="hero-stat-val">5</span><span class="hero-stat-label">Bedrooms</span></div>
       <div class="hero-divider"></div>
-      <div class="hero-stat"><span class="hero-stat-val">4</span><span class="hero-stat-label">Bathrooms</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">3.5</span><span class="hero-stat-label">Bathrooms</span></div>
       <div class="hero-divider"></div>
-      <div class="hero-stat"><span class="hero-stat-val">3,800+</span><span class="hero-stat-label">Sq Ft</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">3,694</span><span class="hero-stat-label">Sq Ft</span></div>
       <div class="hero-divider"></div>
       <div class="hero-stat"><span class="hero-stat-val">2-Car</span><span class="hero-stat-label">Garage</span></div>
     </div>
@@ -96,38 +100,12 @@
   </div>
 </section>
 
-<div class="notice-band">
-  <strong>No open houses currently scheduled</strong> — private tours available by appointment
-</div>
-
-<section class="features" id="info">
-  <p class="section-label">About this home</p>
-  <h2 class="section-title">Crafted for how you actually live</h2>
-  <div class="feat-grid">
-    <div class="feat-item"><div class="feat-icon">🏛️</div><div class="feat-val">Two-story</div><div class="feat-name">Grand foyer entry</div></div>
-    <div class="feat-item"><div class="feat-icon">🍳</div><div class="feat-val">Chef's kitchen</div><div class="feat-name">Gas range · quartz · island</div></div>
-    <div class="feat-item"><div class="feat-icon">🪵</div><div class="feat-val">Hardwood</div><div class="feat-name">Floors throughout main</div></div>
-    <div class="feat-item"><div class="feat-icon">🌿</div><div class="feat-val">Private yard</div><div class="feat-name">Deck + covered patio</div></div>
-    <div class="feat-item"><div class="feat-icon">🔲</div><div class="feat-val">Coffered</div><div class="feat-name">Formal dining ceiling</div></div>
-    <div class="feat-item"><div class="feat-icon">📍</div><div class="feat-val">Senoia, GA</div><div class="feat-name">~45 min to Atlanta</div></div>
-  </div>
-  <div class="highlights">
-    <div class="highlight-item"><span class="highlight-dot"></span>White shaker cabinetry, farmhouse sink, double wall ovens &amp; custom range hood</div>
-    <div class="highlight-item"><span class="highlight-dot"></span>Raised deck overlooking a large, private backyard with endless possibilities</div>
-    <div class="highlight-item"><span class="highlight-dot"></span>Formal dining room with coffered ceilings — made for gathering</div>
-    <div class="highlight-item"><span class="highlight-dot"></span>Minutes from Senoia's charming historic downtown and local restaurants</div>
-    <div class="highlight-item"><span class="highlight-dot"></span>Established community with sidewalks and strong neighborhood feel</div>
-  </div>
-</section>
-
-<div class="ornament">· · ·</div>
-
 <section class="form-section" id="contact">
   <div class="form-inner">
     <div id="form-wrap">
-      <p class="form-eyebrow">Request a private tour</p>
+      <p class="form-eyebrow">Request a private tour or more info</p>
       <h2 class="form-title">We'd love to show<br><em>you around</em></h2>
-      <p class="form-sub">Fill out the form below and we'll reach out within a few hours to confirm a time that works for you.</p>
+      <p class="form-sub">Fill out the form below and we'll reach out to confirm a time that works for you or answer any questions.</p>
       <form id="tourForm" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -150,6 +128,17 @@
           </div>
         </div>
         <div class="form-group">
+          <label>I'm interested in</label>
+          <div style="display:flex; gap:1.5rem; margin-top:4px; flex-wrap:wrap;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
+              <input type="checkbox" name="interest_tour" value="Private Tour" style="width:18px; height:18px; padding:0; cursor:pointer;"> Private Tour
+            </label>
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
+              <input type="checkbox" name="interest_info" value="More Information" style="width:18px; height:18px; padding:0; cursor:pointer;"> More Information
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
           <label for="timing">When are you looking to move?</label>
           <select id="timing" name="timing">
             <option value="" disabled selected>Select a timeframe</option>
@@ -167,8 +156,8 @@
           <label for="message">Anything else? (optional)</label>
           <textarea id="message" name="message" placeholder="Questions, financing status, etc."></textarea>
         </div>
-        <button type="submit" class="submit-btn" id="submitBtn">Request My Private Tour</button>
-        <p class="privacy-note">Your information is kept private and will only be used to schedule your tour.</p>
+        <button type="submit" class="submit-btn" id="submitBtn">Request a Tour or More Info</button>
+        <p class="privacy-note">Your information is kept private and will only be used to schedule your appointment.</p>
       </form>
     </div>
     <div class="success-msg" id="successMsg">
@@ -176,8 +165,28 @@
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h3 class="success-title">You're on the list</h3>
-      <p class="success-body">Thank you! We'll be in touch within a few hours to confirm your private tour of 299 Saddleridge Trail.</p>
+      <p class="success-body">Thank you! We'll be in touch within a few hours to confirm your private appointment at 299 Saddleridge Trail.</p>
     </div>
+  </div>
+</section>
+
+<section class="features" id="info">
+  <p class="section-label">About this home</p>
+  <h2 class="section-title">A rare opportunity in the heart of Senoia</h2>
+  <div class="feat-grid">
+    <div class="feat-item"><div class="feat-icon">🏛️</div><div class="feat-val">Two-story</div><div class="feat-name">Grand foyer entry</div></div>
+    <div class="feat-item"><div class="feat-icon">🍳</div><div class="feat-val">Chef's kitchen</div><div class="feat-name">Gas range · quartz · island</div></div>
+    <div class="feat-item"><div class="feat-icon">🪵</div><div class="feat-val">LVP Floors</div><div class="feat-name">Throughout main level</div></div>
+    <div class="feat-item"><div class="feat-icon">🌿</div><div class="feat-val">Private yard</div><div class="feat-name">Deck + covered patio</div></div>
+    <div class="feat-item"><div class="feat-icon">🏗️</div><div class="feat-val">Basement</div><div class="feat-name">Full unfinished · endless potential</div></div>
+    <div class="feat-item"><div class="feat-icon">📍</div><div class="feat-val">Prime Location</div><div class="feat-name">Near Newnan, Peachtree City & Senoia</div></div>
+  </div>
+  <div class="highlights">
+    <div class="highlight-item"><span class="highlight-dot"></span>White shaker cabinetry, farmhouse sink, double wall ovens &amp; custom range hood — plus LVP flooring throughout</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Raised deck overlooking a large, private backyard with endless possibilities</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Full unfinished basement — a blank canvas ready for your vision, whether a media room, gym, or additional living space</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Conveniently located close to Newnan, Peachtree City, and charming downtown Senoia</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Highly sought-after community — comparable homes are not available until November or later</div>
   </div>
 </section>
 
