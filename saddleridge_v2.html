@@ -129,14 +129,18 @@
         </div>
         <div class="form-group">
           <label>I'm interested in</label>
-          <div style="display:flex; gap:1.5rem; margin-top:4px; flex-wrap:wrap;">
-            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
-              <input type="checkbox" name="interest_tour" value="Private Tour" style="width:18px; height:18px; padding:0; cursor:pointer;"> Private Tour
-            </label>
-            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
-              <input type="checkbox" name="interest_info" value="More Information" style="width:18px; height:18px; padding:0; cursor:pointer;"> More Information
-            </label>
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+            <div id="btn_tour" onclick="toggleInterest('tour')" style="display:flex; align-items:center; gap:12px; font-size:16px; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:3px; padding:16px; cursor:pointer; user-select:none; -webkit-user-select:none;">
+              <span id="check_tour" style="width:24px; height:24px; min-width:24px; border:1.5px solid rgba(255,255,255,0.3); border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:16px;"></span>
+              Private Tour
+            </div>
+            <div id="btn_info" onclick="toggleInterest('info')" style="display:flex; align-items:center; gap:12px; font-size:16px; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:3px; padding:16px; cursor:pointer; user-select:none; -webkit-user-select:none;">
+              <span id="check_info" style="width:24px; height:24px; min-width:24px; border:1.5px solid rgba(255,255,255,0.3); border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:16px;"></span>
+              More Information
+            </div>
           </div>
+          <input type="hidden" name="interest_tour" id="val_tour" value="">
+          <input type="hidden" name="interest_info" id="val_info" value="">
         </div>
         <div class="form-group">
           <label for="timing">When are you looking to move?</label>
@@ -192,14 +196,37 @@
 
 <footer class="footer">
   <p class="footer-agent">Eden Jeffery · Georgia Realtor®</p>
-  <p class="footer-brokerage">Real Broker, LLC</p>
+  <p class="footer-brokerage">Real Broker, LLC · (855) 450-0442</p>
   <p class="footer-contact">
-    <a href="tel:+17705550100">404-341-8848</a> &nbsp;·&nbsp;
+    <a href="tel:+14043418848">404-341-8848</a> &nbsp;·&nbsp;
     <a href="mailto:soldbyeden@gmail.com">soldbyeden@gmail.com</a>
   </p>
+  <p style="font-size:11px; color:var(--soft); margin-top:0.75rem;">MLS# 10718014</p>
 </footer>
 
 <script>
+  const interests = { tour: false, info: false };
+  function toggleInterest(type) {
+    interests[type] = !interests[type];
+    const check = document.getElementById('check_' + type);
+    const btn = document.getElementById('btn_' + type);
+    const val = document.getElementById('val_' + type);
+    if (interests[type]) {
+      check.textContent = '✓';
+      check.style.background = '#B8935A';
+      check.style.borderColor = '#B8935A';
+      check.style.color = '#fff';
+      btn.style.borderColor = '#B8935A';
+      val.value = type === 'tour' ? 'Private Tour' : 'More Information';
+    } else {
+      check.textContent = '';
+      check.style.background = 'transparent';
+      check.style.borderColor = 'rgba(255,255,255,0.3)';
+      btn.style.borderColor = 'rgba(255,255,255,0.12)';
+      val.value = '';
+    }
+  }
+
   document.getElementById('tourForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
