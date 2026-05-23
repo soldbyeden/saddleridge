@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>299 Saddleridge Trail · Senoia, GA 30276</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #F7F3EE; --dark: #1C1A17; --mid: #4A4540; --soft: #9E9189; --accent: #B8935A; --border: rgba(139,94,60,0.15); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--dark); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+  .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2.5rem 1.5rem 3rem; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,26,23,0.15) 0%, rgba(28,26,23,0.72) 100%), url('https://i.imgur.com/LSzalzB.jpeg') center/cover no-repeat; z-index: 0; }
+  .hero-badge { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--accent); color: #fff; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; z-index: 2; }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.75rem; }
+  .hero-address { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 8vw, 4rem); font-weight: 300; line-height: 1.1; color: #fff; margin-bottom: 0.4rem; }
+  .hero-city { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 4vw, 1.6rem); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.7); margin-bottom: 1.75rem; }
+  .hero-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .hero-stat { display: flex; flex-direction: column; gap: 2px; }
+  .hero-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: #fff; line-height: 1; }
+  .hero-stat-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .hero-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); align-self: center; }
+  .scroll-cue { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; background: none; border: none; }
+  .scroll-cue svg { width: 16px; height: 16px; }
+  .notice-band { background: var(--dark); color: rgba(255,255,255,0.9); text-align: center; padding: 2rem 1.5rem; font-size: 20px; font-weight: 300; letter-spacing: 0.04em; }
+  .notice-band strong { color: var(--accent); font-weight: 500; }
+  .features { padding: 4rem 1.5rem; max-width: 640px; margin: 0 auto; }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 300; line-height: 1.2; color: var(--dark); margin-bottom: 2rem; }
+  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 2rem; }
+  .feat-item { background: var(--cream); padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 4px; }
+  .feat-icon { font-size: 18px; margin-bottom: 4px; }
+  .feat-val { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--dark); line-height: 1; }
+  .feat-name { font-size: 11px; color: var(--soft); letter-spacing: 0.05em; }
+  .highlights { display: flex; flex-direction: column; gap: 0.6rem; }
+  .highlight-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--mid); line-height: 1.5; }
+  .highlight-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+  .ornament { text-align: center; padding: 0.5rem 0; color: var(--border); font-size: 20px; letter-spacing: 0.5em; }
+  .form-section { background: var(--dark); padding: 3.5rem 1.5rem 4rem; position: relative; overflow: hidden; }
+  .form-section::before { content: '299'; position: absolute; right: -0.5rem; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: clamp(8rem, 30vw, 14rem); font-weight: 300; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+  .form-inner { max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
+  .form-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  .form-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 6vw, 2.8rem); font-weight: 300; color: #fff; line-height: 1.15; margin-bottom: 0.75rem; }
+  .form-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  @media (max-width: 440px) { .form-row { grid-template-columns: 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  label { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  input, select, textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; padding: 12px 14px; width: 100%; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
+  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+  select { cursor: pointer; }
+  select option { background: #1C1A17; color: #fff; }
+  textarea { resize: vertical; min-height: 90px; }
+  .submit-btn { width: 100%; background: var(--accent); border: none; border-radius: 3px; color: #fff; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px; margin-top: 8px; transition: background 0.2s; }
+  .submit-btn:hover { background: #a07848; }
+  .submit-btn:disabled { background: rgba(255,255,255,0.2); cursor: not-allowed; }
+  .privacy-note { text-align: center; font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 1rem; line-height: 1.5; }
+  .success-msg { display: none; text-align: center; padding: 3rem 1rem; }
+  .success-icon { width: 52px; height: 52px; border: 1.5px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+  .success-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+  .success-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 320px; margin: 0 auto; }
+  .footer { background: var(--cream); padding: 2rem 1.5rem; text-align: center; border-top: 1px solid var(--border); }
+  .footer-agent { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: 4px; }
+  .footer-brokerage { font-size: 12px; color: var(--soft); letter-spacing: 0.05em; margin-bottom: 1rem; }
+  .footer-contact { font-size: 13px; color: var(--mid); }
+  .footer-contact a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="notice-band">
+  <strong>No open houses currently scheduled</strong><br><br><a href="#contact" style="display:inline-block; margin-top:0.5rem; background:var(--accent); color:#fff; font-size:14px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:14px 28px; border-radius:3px; text-decoration:none;">Request a Private Tour or More Info</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Exclusively presented at</p>
+    <h1 class="hero-address">299 Saddleridge<br>Trail</h1>
+    <p class="hero-city">Senoia, Georgia 30276</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-val">5</span><span class="hero-stat-label">Bedrooms</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-val">3.5</span><span class="hero-stat-label">Bathrooms</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-val">3,694</span><span class="hero-stat-label">Sq Ft</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><span class="hero-stat-val">2-Car</span><span class="hero-stat-label">Garage</span></div>
+    </div>
+    <button class="scroll-cue" onclick="document.getElementById('info').scrollIntoView({behavior:'smooth'})">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Explore the home
+    </button>
+  </div>
+</section>
+
+<section class="form-section" id="contact">
+  <div class="form-inner">
+    <div id="form-wrap">
+      <p class="form-eyebrow">Request a private tour or more info</p>
+      <h2 class="form-title">We'd love to show<br><em>you around</em></h2>
+      <p class="form-sub">Fill out the form below and we'll reach out to confirm a time that works for you or answer any questions.</p>
+      <form id="tourForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(770) 555-0100">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>I'm interested in</label>
+          <div style="display:flex; gap:1.5rem; margin-top:4px; flex-wrap:wrap;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
+              <input type="checkbox" name="interest_tour" value="Private Tour" style="width:18px; height:18px; padding:0; cursor:pointer;"> Private Tour
+            </label>
+            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:rgba(255,255,255,0.7); text-transform:none; letter-spacing:0; cursor:pointer;">
+              <input type="checkbox" name="interest_info" value="More Information" style="width:18px; height:18px; padding:0; cursor:pointer;"> More Information
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="timing">When are you looking to move?</label>
+          <select id="timing" name="timing">
+            <option value="" disabled selected>Select a timeframe</option>
+            <option>As soon as possible</option>
+            <option>Within 30–60 days</option>
+            <option>60–90 days</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="preferred">Preferred tour days / times</label>
+          <input type="text" id="preferred" name="preferred" placeholder="e.g. Weekday evenings or Saturday mornings">
+        </div>
+        <div class="form-group">
+          <label for="message">Anything else? (optional)</label>
+          <textarea id="message" name="message" placeholder="Questions, financing status, etc."></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">Request a Tour or More Info</button>
+        <p class="privacy-note">Your information is kept private and will only be used to schedule your appointment.</p>
+      </form>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="success-title">You're on the list</h3>
+      <p class="success-body">Thank you! We'll be in touch within a few hours to confirm your private appointment at 299 Saddleridge Trail.</p>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="info">
+  <p class="section-label">About this home</p>
+  <h2 class="section-title">A rare opportunity in the heart of Senoia</h2>
+  <div class="feat-grid">
+    <div class="feat-item"><div class="feat-icon">🏛️</div><div class="feat-val">Two-story</div><div class="feat-name">Grand foyer entry</div></div>
+    <div class="feat-item"><div class="feat-icon">🍳</div><div class="feat-val">Chef's kitchen</div><div class="feat-name">Gas range · quartz · island</div></div>
+    <div class="feat-item"><div class="feat-icon">🪵</div><div class="feat-val">LVP Floors</div><div class="feat-name">Throughout main level</div></div>
+    <div class="feat-item"><div class="feat-icon">🌿</div><div class="feat-val">Private yard</div><div class="feat-name">Deck + covered patio</div></div>
+    <div class="feat-item"><div class="feat-icon">🏗️</div><div class="feat-val">Basement</div><div class="feat-name">Full unfinished · endless potential</div></div>
+    <div class="feat-item"><div class="feat-icon">📍</div><div class="feat-val">Prime Location</div><div class="feat-name">Near Newnan, Peachtree City & Senoia</div></div>
+  </div>
+  <div class="highlights">
+    <div class="highlight-item"><span class="highlight-dot"></span>White shaker cabinetry, farmhouse sink, double wall ovens &amp; custom range hood — plus LVP flooring throughout</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Raised deck overlooking a large, private backyard with endless possibilities</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Full unfinished basement — a blank canvas ready for your vision, whether a media room, gym, or additional living space</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Conveniently located close to Newnan, Peachtree City, and charming downtown Senoia</div>
+    <div class="highlight-item"><span class="highlight-dot"></span>Highly sought-after community — comparable homes are not available until November or later</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-agent">Eden Jeffery · Georgia Realtor®</p>
+  <p class="footer-brokerage">Real Broker, LLC</p>
+  <p class="footer-contact">
+    <a href="tel:+17705550100">404-341-8848</a> &nbsp;·&nbsp;
+    <a href="mailto:soldbyeden@gmail.com">soldbyeden@gmail.com</a>
+  </p>
+</footer>
+
+<script>
+  document.getElementById('tourForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    const data = new FormData(this);
+    const payload = Object.fromEntries(data.entries());
+    const FORMSPREE_URL = 'https://formspree.io/f/xykvjqlg';
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        document.getElementById('form-wrap').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else { throw new Error(); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Request My Private Tour';
+      alert('Something went wrong. Please call or email us directly.');
+    }
+  });
+</script>
+</body>
+</html>
